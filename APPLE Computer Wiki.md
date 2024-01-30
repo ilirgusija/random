@@ -17,11 +17,6 @@ In order to be able to connect to the machine off-campus you will need a Queen's
     -   Windows 10 and later versions come with a built-in SSH client, so you might not need to install anything.
     -   To check if it's installed, open Command Prompt or PowerShell and type `ssh`. If it's installed, you'll see the usage instructions.
     -   If not installed, you can enable it by going to `Settings` -> `Apps` -> `Optional Features` -> `Add a feature`, and then select "OpenSSH Client" and click "Install".
-2.  **Using Third-Party Tools (like PuTTY)**
-    
-    -   Download PuTTY from [here](https://www.putty.org/).
-    -   Install it by following the on-screen instructions.
-    -   Once installed, open PuTTY to connect to your SSH server.
 
 ### For macOS
 
@@ -63,6 +58,7 @@ If you don't want to have to type in the password for your user on the supercomp
     
     -   Display and copy your public key with `Get-Content ~/.ssh/id_rsa.pub`.
     -   Paste this key into the `~/.ssh/authorized_keys` file on your remote server.
+    - ^ Administrator might need to run something to make this part work so if you still get prompte
 
 ### For macOS & Linux
 
@@ -87,6 +83,6 @@ If you don't want to have to type in the password for your user on the supercomp
 
 <!--stackedit_data:
 eyJwcm9wZXJ0aWVzIjoidGl0bGU6IEFwcGxlLVN1cGVyQ29tcH
-V0ZXItd2lraVxuIiwiaGlzdG9yeSI6WzIwNDQ5MjExMTJdfQ==
-
+V0ZXItd2lraVxuIiwiaGlzdG9yeSI6Wy05ODMyMTcxMTYsMjA0
+NDkyMTExMl19
 -->
