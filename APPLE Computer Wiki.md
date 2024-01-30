@@ -90,22 +90,21 @@ Here's some basic ChatGPT generated guides on how to do this:
     
 2.  **Check GPU Availability**: You can check if TensorFlow detects your GPUs using the following code:
     
-    pythonCopy code
-    
-    `import tensorflow as tf
-    print("Num GPUs Available: ", len(tf.config.list_physical_devices('GPU')))` 
+    ```python
+    import tensorflow as tf
+    print("Num GPUs Available: ", len(tf.config.list_physical_devices('GPU')))
+    ``` 
     
 3.  **Enable GPU Growth**: This step is optional but recommended. It prevents TensorFlow from allocating the entire GPU memory at once.
-    
-    pythonCopy code
-    
-    `gpus = tf.config.list_physical_devices('GPU')
+    ```python
+    gpus = tf.config.list_physical_devices('GPU')
     for gpu in gpus:
-        tf.config.experimental.set_memory_growth(gpu, True)` 
+        tf.config.experimental.set_memory_growth(gpu, True)
+    ``` 
     
 4.  **Distribute Strategy**: Use TensorFlow's `tf.distribute.Strategy` API for distributing computations across multiple GPUs. The most common strategy is `MirroredStrategy`.
     
-    pythonCopy code
+
     
     `strategy = tf.distribute.MirroredStrategy()` 
     
@@ -151,6 +150,6 @@ Here's some basic ChatGPT generated guides on how to do this:
         # Rest of your training loop`
 <!--stackedit_data:
 eyJwcm9wZXJ0aWVzIjoidGl0bGU6IEFwcGxlLVN1cGVyQ29tcH
-V0ZXItd2lraVxuIiwiaGlzdG9yeSI6Wy0xOTUzNTAyOTIyLDIw
-NDQ5MjExMTJdfQ==
+V0ZXItd2lraVxuIiwiaGlzdG9yeSI6WzE3ODYyMDI3MDIsMjA0
+NDkyMTExMl19
 -->
