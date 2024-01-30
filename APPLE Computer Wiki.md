@@ -87,6 +87,9 @@ Here's some basic ChatGPT generated guides on how to do this:
 ### TensorFlow
 
 1.  **Install TensorFlow-GPU**: Ensure you have the GPU version of TensorFlow installed. This version is specifically built to utilize NVIDIA GPUs.
+	```bash
+	pip install tensorflow-gpu
+	```
     
 2.  **Check GPU Availability**: You can check if TensorFlow detects your GPUs using the following code:
     
@@ -152,6 +155,6 @@ Here's some basic ChatGPT generated guides on how to do this:
     ```
 <!--stackedit_data:
 eyJwcm9wZXJ0aWVzIjoidGl0bGU6IEFwcGxlLVN1cGVyQ29tcH
-V0ZXItd2lraVxuIiwiaGlzdG9yeSI6WzI0MTgwODc1MiwyMDQ0
-OTIxMTEyXX0=
+V0ZXItd2lraVxuIiwiaGlzdG9yeSI6WzE5ODQ1MjE4MjYsMjQx
+ODA4NzUyLDIwNDQ5MjExMTJdfQ==
 -->
