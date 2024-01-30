@@ -58,7 +58,7 @@ If you don't want to have to type in the password for your user on the supercomp
     
     -   Display and copy your public key with `Get-Content ~/.ssh/id_rsa.pub`.
     -   Paste this key into the `~/.ssh/authorized_keys` file on your remote server.
-    - ^ Administrator might need to run something to make this part work so if you still get prompte
+    - ^ Administrator might need to run something to make this part work so if you still get prompted to enter your password you might need to contact Rohan or Kalena to do that for you.
 
 ### For macOS & Linux
 
@@ -80,9 +80,11 @@ If you don't want to have to type in the password for your user on the supercomp
 	    -  You can display and copy your public key with `cat ~/.ssh/id_rsa.pub`.
 	    - Add this key to the `~/.ssh/authorized_keys` file on the remote server.
 
+## 4. Some tips and tricks
 
+You are using a desktop with 2 GPUs, by default when you run code, you will only use one so make you properly 
 <!--stackedit_data:
 eyJwcm9wZXJ0aWVzIjoidGl0bGU6IEFwcGxlLVN1cGVyQ29tcH
-V0ZXItd2lraVxuIiwiaGlzdG9yeSI6Wy05ODMyMTcxMTYsMjA0
-NDkyMTExMl19
+V0ZXItd2lraVxuIiwiaGlzdG9yeSI6Wzk2NzM0NTA4NywyMDQ0
+OTIxMTEyXX0=
 -->
