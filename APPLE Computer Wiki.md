@@ -82,9 +82,75 @@ If you don't want to have to type in the password for your user on the supercomp
 
 ## 4. Some tips and tricks
 
-You are using a desktop with 2 GPUs, by default when you run code, you will only use one so make you properly 
+You are using a desktop with 2 GPUs, by default when you run code, you will only use one so make you properly run code that uses the full capabilities of the computer!
+Here's some basic ChatGPT generated guides on how to do this:
+### TensorFlow
+
+1.  **Install TensorFlow-GPU**: Ensure you have the GPU version of TensorFlow installed. This version is specifically built to utilize NVIDIA GPUs.
+    
+2.  **Check GPU Availability**: You can check if TensorFlow detects your GPUs using the following code:
+    
+    pythonCopy code
+    
+    `import tensorflow as tf
+    print("Num GPUs Available: ", len(tf.config.list_physical_devices('GPU')))` 
+    
+3.  **Enable GPU Growth**: This step is optional but recommended. It prevents TensorFlow from allocating the entire GPU memory at once.
+    
+    pythonCopy code
+    
+    `gpus = tf.config.list_physical_devices('GPU')
+    for gpu in gpus:
+        tf.config.experimental.set_memory_growth(gpu, True)` 
+    
+4.  **Distribute Strategy**: Use TensorFlow's `tf.distribute.Strategy` API for distributing computations across multiple GPUs. The most common strategy is `MirroredStrategy`.
+    
+    pythonCopy code
+    
+    `strategy = tf.distribute.MirroredStrategy()` 
+    
+5.  **Model Building and Training**: Encapsulate your model building and training code within the scope of the strategy:
+    
+    pythonCopy code
+    
+    `with strategy.scope():
+        # Build your model here
+        model = ...
+        model.compile(...)
+    
+        # Train your model here
+        model.fit(...)`
+
+### PyTorch
+
+1.  **Install PyTorch with CUDA**: Make sure you have the PyTorch version with CUDA support installed.
+    
+2.  **Check GPU Availability**: In PyTorch, you can check for available GPUs using:
+    
+    pythonCopy code
+    
+    `import torch
+    print(torch.cuda.device_count())` 
+    
+3.  **Data Parallelism**: Use `torch.nn.DataParallel` to parallelize your model over multiple GPUs. This wraps your model and automatically splits data across GPUs.
+    
+    pythonCopy code
+    
+    `model = YourModel()
+    if torch.cuda.device_count() > 1:
+        print("Let's use", torch.cuda.device_count(), "GPUs!")
+        model = torch.nn.DataParallel(model)
+    model.to(device)` 
+    
+4.  **Adjust Your Training Loop**: Ensure your training loop correctly processes data on multiple GPUs. This usually involves ensuring data and model are on the same device.
+    
+    pythonCopy code
+    
+    `for data in dataset:
+        inputs, labels = data[0].to(device), data[1].to(device)
+        # Rest of your training loop`
 <!--stackedit_data:
 eyJwcm9wZXJ0aWVzIjoidGl0bGU6IEFwcGxlLVN1cGVyQ29tcH
-V0ZXItd2lraVxuIiwiaGlzdG9yeSI6Wzk2NzM0NTA4NywyMDQ0
-OTIxMTEyXX0=
+V0ZXItd2lraVxuIiwiaGlzdG9yeSI6Wy0xOTUzNTAyOTIyLDIw
+NDQ5MjExMTJdfQ==
 -->
