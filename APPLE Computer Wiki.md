@@ -106,19 +106,21 @@ Here's some basic ChatGPT generated guides on how to do this:
     
 
     
-    `strategy = tf.distribute.MirroredStrategy()` 
+    ```python
+    strategy = tf.distribute.MirroredStrategy()
+    ``` 
     
 5.  **Model Building and Training**: Encapsulate your model building and training code within the scope of the strategy:
-    
-    pythonCopy code
-    
-    `with strategy.scope():
+  
+    ```python
+    with strategy.scope():
         # Build your model here
         model = ...
         model.compile(...)
     
         # Train your model here
-        model.fit(...)`
+        model.fit(...)
+    ```
 
 ### PyTorch
 
@@ -126,30 +128,30 @@ Here's some basic ChatGPT generated guides on how to do this:
     
 2.  **Check GPU Availability**: In PyTorch, you can check for available GPUs using:
     
-    pythonCopy code
-    
-    `import torch
-    print(torch.cuda.device_count())` 
+    ```python
+    import torch
+    print(torch.cuda.device_count())
+    ``` 
     
 3.  **Data Parallelism**: Use `torch.nn.DataParallel` to parallelize your model over multiple GPUs. This wraps your model and automatically splits data across GPUs.
     
-    pythonCopy code
-    
-    `model = YourModel()
+    ```python
+    model = YourModel()
     if torch.cuda.device_count() > 1:
         print("Let's use", torch.cuda.device_count(), "GPUs!")
         model = torch.nn.DataParallel(model)
-    model.to(device)` 
+    model.to(device)
+    ``` 
     
 4.  **Adjust Your Training Loop**: Ensure your training loop correctly processes data on multiple GPUs. This usually involves ensuring data and model are on the same device.
-    
-    pythonCopy code
-    
-    `for data in dataset:
+
+    ```python
+    for data in dataset:
         inputs, labels = data[0].to(device), data[1].to(device)
-        # Rest of your training loop`
+        # Rest of your training loop
+    ```
 <!--stackedit_data:
 eyJwcm9wZXJ0aWVzIjoidGl0bGU6IEFwcGxlLVN1cGVyQ29tcH
-V0ZXItd2lraVxuIiwiaGlzdG9yeSI6WzE3ODYyMDI3MDIsMjA0
-NDkyMTExMl19
+V0ZXItd2lraVxuIiwiaGlzdG9yeSI6WzI0MTgwODc1MiwyMDQ0
+OTIxMTEyXX0=
 -->
