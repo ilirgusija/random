@@ -6,6 +6,9 @@ This guide uses a lot of placeholder values so make sure you put in the correct 
 If you run into any issues try ChatGPT/Google/Stack Exchange first and if things still don't work then contact:  [Rohan](apple.bed@engsoc.queensu.ca) or [Kalena](apple.pres@engsoc.queensu.ca) or [Ilir](ilir.gusija@queensu.ca).
 
 ## 1. Installing Queen's VPN
+# NOTE YOU NEED TO SET UP THE VPN ON QUEEN'S WIFI WHEN USING IT FOR THE FIRST TIME
+If you know someone who already has it set up, you can get them to connect to vpn and have them hotspot you to emulate that
+
 In order to be able to connect to the machine off-campus you will need a Queen's VPN set-up in order to connect. Otherwise you won't be able to connect. Use this link to set everything up
 [End User - Connecting to Campus VPN using FortiClient on Windows and macOS (service-now.com)](https://queensu.service-now.com/esm?id=kb_article&sysparm_article=KB0012696&sys_kb_id=b5eaa2b587bbb55064edf29acebb3559)
 
